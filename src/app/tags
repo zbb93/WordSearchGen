@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+PuzzleCreatorGUI	PuzzleCreatorGUI.java	/^public class PuzzleCreatorGUI {$/;"	c
+WordSearch	WordSearch.java	/^	public WordSearch(int difficulty) {$/;"	m	class:WordSearch
+WordSearch	WordSearch.java	/^public class WordSearch {$/;"	c
+app	PuzzleCreatorGUI.java	/^package app;$/;"	p
+app	WordSearch.java	/^package app;$/;"	p
+checkForWords	PuzzleCreatorGUI.java	/^	private static boolean checkForWords() {$/;"	m	class:PuzzleCreatorGUI	file:
+checkGameStatus	PuzzleCreatorGUI.java	/^	private static boolean checkGameStatus() {$/;"	m	class:PuzzleCreatorGUI	file:
+checkPlacement	WordSearch.java	/^	private boolean checkPlacement(int row, int col, String orientation, String word) {$/;"	m	class:WordSearch	file:
+createPuzzle	WordSearch.java	/^	private void createPuzzle() {$/;"	m	class:WordSearch	file:
+difficulty	WordSearch.java	/^	private int difficulty;$/;"	f	class:WordSearch	file:
+displayWordSearch	PuzzleCreatorGUI.java	/^	public static void displayWordSearch(WordSearch w) {$/;"	m	class:PuzzleCreatorGUI
+fillPuzzle	WordSearch.java	/^	private void fillPuzzle() {$/;"	m	class:WordSearch	file:
+foundWords	PuzzleCreatorGUI.java	/^	private static boolean[] foundWords = new boolean[w.getWords().length];$/;"	f	class:PuzzleCreatorGUI	file:
+getDifficulty	WordSearch.java	/^	public int getDifficulty() {$/;"	m	class:WordSearch
+getPuzzle	WordSearch.java	/^	public char[][] getPuzzle() {$/;"	m	class:WordSearch
+getWords	WordSearch.java	/^	public String[] getWords() {$/;"	m	class:WordSearch
+lines	WordSearch.java	/^	private ArrayList<String> lines = new ArrayList<String>();$/;"	f	class:WordSearch	file:
+main	PuzzleCreatorGUI.java	/^    public static void main(String[] args) throws FileNotFoundException, ParseException {$/;"	m	class:PuzzleCreatorGUI
+placeWord	WordSearch.java	/^	private void placeWord(String word, String orientation) {$/;"	m	class:WordSearch	file:
+puzzle	WordSearch.java	/^	private char[][] puzzle = new char[20][20];$/;"	f	class:WordSearch	file:
+readFile	WordSearch.java	/^	private void readFile() {$/;"	m	class:WordSearch	file:
+redrawWordLabel	PuzzleCreatorGUI.java	/^	private static void redrawWordLabel() {$/;"	m	class:PuzzleCreatorGUI	file:
+selectWord	WordSearch.java	/^	private String selectWord(int low, int high) {$/;"	m	class:WordSearch	file:
+selectedChars	PuzzleCreatorGUI.java	/^	private static ArrayList<JButton> selectedChars = new ArrayList<JButton>();	$/;"	f	class:PuzzleCreatorGUI	file:
+w	PuzzleCreatorGUI.java	/^	private static WordSearch w = new WordSearch(5);$/;"	f	class:PuzzleCreatorGUI	file:
+wordSection	PuzzleCreatorGUI.java	/^	private static JLabel wordSection = new JLabel();$/;"	f	class:PuzzleCreatorGUI	file:
+words	WordSearch.java	/^	private String[] words;$/;"	f	class:WordSearch	file:
