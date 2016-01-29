@@ -3,6 +3,7 @@ package app;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -22,8 +23,9 @@ public class PuzzleCreatorGUI {
 	private static ArrayList<JButton> selectedChars = new ArrayList<JButton>();	
 	private static WordSearch w = new WordSearch(5);
 	private static boolean[] foundWords = new boolean[w.getWords().length];
-	private static JLabel wordSection = new JLabel();
-	
+	//private static JPanel wordSection = new JPanel(new FlowLayout());
+  private static WordPanel wordSection = new WordPanel(w.getWords());
+
     public static void main(String[] args) throws FileNotFoundException, ParseException {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
@@ -105,7 +107,7 @@ public class PuzzleCreatorGUI {
         		panel.add(button);
         	}
         }
-        //Draw Words        
+        /*Draw Words        
         String[] words = w.getWords();
         String word = "<html>";
         for (int i = 0; i < words.length; i++) {
@@ -113,7 +115,19 @@ public class PuzzleCreatorGUI {
         	word += "<br>";
         }
         word += "</html>";
-        wordSection.setText(word);
+        wordSection.setText(word);*/
+
+        /*
+        String[] words = w.getWords();
+        String word;
+        JLabel wordLabel = new JLabel();
+        for (int i = 0; i < words.length; i++) {
+          word = "<html>";
+          word += words[i];
+          word += "</html>";
+          wordLabel.setText(word);
+          wordSection.add(wordLabel);
+        }*/
         
         frame.add(panel, BorderLayout.CENTER);
         frame.add(wordSection, BorderLayout.PAGE_END);
@@ -141,6 +155,7 @@ public class PuzzleCreatorGUI {
 	
 	private static void redrawWordLabel() {
 		String[] words = w.getWords();
+    JLabel wordLabel = new JLabel();
 		String word = "<html>";
 		for (int i = 0; i < words.length; i++) {
 			if (foundWords[i] == true) {
@@ -153,7 +168,8 @@ public class PuzzleCreatorGUI {
 				word += "<br>";
 			}
         }
-		wordSection.setText(word);
+		wordLabel.setText(word);
+    wordSection.add(wordLabel);
 	}
 	
 	private static boolean checkGameStatus() {
