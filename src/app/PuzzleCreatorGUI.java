@@ -106,29 +106,7 @@ public class PuzzleCreatorGUI {
         		});
         		panel.add(button);
         	}
-        }
-        /*Draw Words        
-        String[] words = w.getWords();
-        String word = "<html>";
-        for (int i = 0; i < words.length; i++) {
-        	word += words[i];
-        	word += "<br>";
-        }
-        word += "</html>";
-        wordSection.setText(word);*/
-
-        /*
-        String[] words = w.getWords();
-        String word;
-        JLabel wordLabel = new JLabel();
-        for (int i = 0; i < words.length; i++) {
-          word = "<html>";
-          word += words[i];
-          word += "</html>";
-          wordLabel.setText(word);
-          wordSection.add(wordLabel);
-        }*/
-        
+        } 
         frame.add(panel, BorderLayout.CENTER);
         frame.add(wordSection, BorderLayout.PAGE_END);
         frame.pack();
