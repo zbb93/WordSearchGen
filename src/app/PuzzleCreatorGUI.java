@@ -25,23 +25,24 @@ public class PuzzleCreatorGUI {
 	private static boolean[] foundWords = new boolean[w.getWords().length];
 	//private static JPanel wordSection = new JPanel(new FlowLayout());
   private static WordPanel wordSection = new WordPanel(w.getWords());
+  private static JFrame frame;
 
-    public static void main(String[] args) throws FileNotFoundException, ParseException {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-    	for (int i = 0; i < foundWords.length; i++) {
-    		foundWords[i] = false;
-    	}
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {               	
-            	displayWordSearch(w);
-            }
-        });
+  public static void main(String[] args) throws FileNotFoundException, ParseException {
+    //Schedule a job for the event-dispatching thread:
+    //creating and showing this application's GUI.
+    for (int i = 0; i < foundWords.length; i++) {
+    	foundWords[i] = false;
+    }
+    javax.swing.SwingUtilities.invokeLater(new Runnable() {
+        public void run() {               	
+          displayWordSearch(w);
+        }
+      });
     }
     
 	public static void displayWordSearch(WordSearch w) {
 		//Create and set up the window.
-        JFrame frame = new JFrame("Puzzle Creator");
+        frame = new JFrame("Puzzle Creator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
         //Draw Puzzle  
         GridLayout gl = new GridLayout(20, 20);
@@ -98,11 +99,8 @@ public class PuzzleCreatorGUI {
 						} else if (b.getBackground() == Color.YELLOW) {
 							b.setBackground(Color.WHITE);
 							selectedChars.remove(b);
-						}
-						
-						
-					}
-        			
+						}		
+					}	
         		});
         		panel.add(button);
         	}
@@ -113,7 +111,6 @@ public class PuzzleCreatorGUI {
         frame.setVisible(true);
 	}
 	
-	//TODO: Remove toLowerCase statement after testing
 	private static boolean checkForWords() {
 		String[] words = w.getWords();
 		String selectedWord = "";
@@ -124,31 +121,34 @@ public class PuzzleCreatorGUI {
 		for (int i = 0; i < words.length; i++) {
 			if (words[i].equals(selectedWord)) {
 				foundWords[i] = true;
+        wordSection.markAsFound(i);
 				return true;
 			}
 		}
-		return false;
-		
+		return false;		
 	}
 	
-	private static void redrawWordLabel() {
+	private static void redrawWordLabel() {/*
 		String[] words = w.getWords();
     JLabel wordLabel = new JLabel();
-		String word = "<html>";
+    String word;
 		for (int i = 0; i < words.length; i++) {
+      word = "<html>";
 			if (foundWords[i] == true) {
 				word += "<strike>";
 				word += words[i];
 				word += "</strike>";
-				word += "<br>";
+        wordLabel.setText(word);
 			} else {
 				word += words[i];
-				word += "<br>";
-			}
-        }
-		wordLabel.setText(word);
-    wordSection.add(wordLabel);
-	}
+        wordLabel.setText(word);
+			  }
+      word += "</html>";
+      wordSection.add(wordLabel); 
+	  }
+    frame.repaint(); */
+    wordSection.repaint();
+  }
 	
 	private static boolean checkGameStatus() {
 		int count = 0;
