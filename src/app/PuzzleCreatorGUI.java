@@ -41,20 +41,20 @@ public class PuzzleCreatorGUI {
     }
     
 	public static void displayWordSearch(WordSearch w) {
-		//Create and set up the window.
-        frame = new JFrame("Puzzle Creator");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
-        //Draw Puzzle  
-        GridLayout gl = new GridLayout(20, 20);
-        JPanel panel = new JPanel(gl);        
-        char[][] puzzle = w.getPuzzle();
-        JButton button;
-        for (int i = 0; i < puzzle.length; i++) {
-        	for (int j = 0; j < puzzle[i].length; j++) {
-        		button = new JButton(Character.toString(puzzle[i][j]));
-        		button.setBackground(Color.WHITE);
-        		button.setBorderPainted(false);
-        		button.addActionListener(new ActionListener() {
+    //Create and set up the window.
+    frame = new JFrame("Puzzle Creator");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
+    //Draw Puzzle  
+    GridLayout gl = new GridLayout(20, 20);
+    JPanel panel = new JPanel(gl);        
+    char[][] puzzle = w.getPuzzle();
+    JButton button;
+    for (int i = 0; i < puzzle.length; i++) {
+      for (int j = 0; j < puzzle[i].length; j++) {
+        button = new JButton(Character.toString(puzzle[i][j]));
+        button.setBackground(Color.WHITE);
+        button.setBorderPainted(false);
+        button.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent ae) {						
@@ -68,6 +68,7 @@ public class PuzzleCreatorGUI {
 								}
 								selectedChars.clear();
 								redrawWordLabel();
+                frame.validate();
 								if (checkGameStatus()) {
 									final JButton b1 = new JButton("Play Again");
 									b1.addActionListener(new ActionListener() {
@@ -76,8 +77,7 @@ public class PuzzleCreatorGUI {
 										public void actionPerformed(ActionEvent arg0) {
 											// TODO: Create new wordsearch
 											frame.dispose();
-											displayWordSearch(new WordSearch(w.getDifficulty() + 1));
-											
+											displayWordSearch(new WordSearch(w.getDifficulty() + 1));											
 										}
 										
 									});
@@ -147,7 +147,7 @@ public class PuzzleCreatorGUI {
       wordSection.add(wordLabel); 
 	  }
     frame.repaint(); */
-    wordSection.repaint();
+    wordSection.update();
   }
 	
 	private static boolean checkGameStatus() {

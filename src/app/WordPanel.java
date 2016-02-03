@@ -29,7 +29,7 @@ public class WordPanel extends JPanel {
     }    
   }
 
-  public void repaint() {
+  public void update() {
     removeAll();
     JLabel wordLabel;
     String word;
