@@ -21,10 +21,10 @@ import javax.swing.JPanel;
 public class PuzzleCreatorGUI {
 	
 	private static ArrayList<JButton> selectedChars = new ArrayList<JButton>();	
-	private static WordSearch w = new WordSearch(5);
+	private static WordSearch w = new WordSearch(-3);
 	private static boolean[] foundWords = new boolean[w.getWords().length];
 	//private static JPanel wordSection = new JPanel(new FlowLayout());
-  private static WordPanel wordSection = new WordPanel(w.getWords());
+  private static WordPanel wordSection;
   private static JFrame frame;
 
   public static void main(String[] args) throws FileNotFoundException, ParseException {
@@ -106,6 +106,7 @@ public class PuzzleCreatorGUI {
         	}
         } 
         frame.add(panel, BorderLayout.CENTER);
+        wordSection = new WordPanel(w.getWords());
         frame.add(wordSection, BorderLayout.PAGE_END);
         frame.pack();
         frame.setVisible(true);

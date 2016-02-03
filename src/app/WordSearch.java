@@ -20,7 +20,7 @@ public class WordSearch {
 		this.words = new String[difficulty + 4];
 		int lengthLowerBound = 4;
 		int lengthUpperBound = 8;
-		// Read in the file into a list of strings
+		// Read the file into a list of strings
 		readFile();
 		for (int i = 0; i < words.length; i++) {
 			String word = selectWord(lengthLowerBound, lengthUpperBound);
