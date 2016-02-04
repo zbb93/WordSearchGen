@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class PuzzleCreatorGUI {
 	
 	private static ArrayList<JButton> selectedChars = new ArrayList<JButton>();	
-	private static WordSearch w = new WordSearch(-3);
+	private static WordSearch w = new WordSearch(5);
 	private static boolean[] foundWords = new boolean[w.getWords().length];
 	//private static JPanel wordSection = new JPanel(new FlowLayout());
   private static WordPanel wordSection;
@@ -45,8 +45,7 @@ public class PuzzleCreatorGUI {
     frame = new JFrame("Puzzle Creator");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
     //Draw Puzzle  
-    GridLayout gl = new GridLayout(20, 20);
-    JPanel panel = new JPanel(gl);        
+    JPanel panel = new JPanel(new GridLayout(20, 20));        
     char[][] puzzle = w.getPuzzle();
     JButton button;
     for (int i = 0; i < puzzle.length; i++) {
