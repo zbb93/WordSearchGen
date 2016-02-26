@@ -1,11 +1,20 @@
-public class TimerLabel {
-  private long startTime;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.Timer;
+
+public class TimerLabel extends JLabel {
+  private long startTime = System.currentTimeMillis();
   public TimerLabel() {
-    this.startTime = System.currentTimeMillis();
-    super("Elapsed time: " + elapsedTime());
+    super("Elapsed time: ");
+    //super("Elapsed time: " + elapsedTime());
     ActionListener actionListener = new ActionListener() {
       public void actionPerformed(ActionEvent ae) {
-        this.setText("Elapsed time: " + elapsedTime());
+        Object source = ae.getSource();
+        if (source instanceof TimerLabel) {
+          TimerLabel tl = (TimerLabel) source;
+          tl.setText("Elapsed time: " + elapsedTime());
+        }
       }
     };
     Timer t = new Timer(1000, actionListener);
@@ -15,9 +24,9 @@ public class TimerLabel {
   private String elapsedTime() {
     long elapsedTime = System.currentTimeMillis() - this.startTime;
     long elapsedSeconds = elapsedTime / 1000;
-    int elapsedHours = elapsedSeconds / 3600;
-    int elapsedMinutes = elapsedSeconds / 60;
-    int formattedSeconds = elapsedSeconds % 60;
+    int elapsedHours = (int) (elapsedSeconds / 3600);
+    int elapsedMinutes = (int) (elapsedSeconds / 60);
+    int formattedSeconds = (int) (elapsedSeconds % 60);
     StringBuilder sb = new StringBuilder();
     sb.append(elapsedHours);
     sb.append('h');

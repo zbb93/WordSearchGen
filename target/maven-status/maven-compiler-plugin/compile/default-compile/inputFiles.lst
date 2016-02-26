@@ -1,7 +1,8 @@
 /home/zbb/dev/java/WordSearchGen/src/app/WordPanel.java
 /home/zbb/dev/java/WordSearchGen/src/test/WordSearchTest.java
 /home/zbb/dev/java/WordSearchGen/src/test/GameOverTest.java
-/home/zbb/dev/java/WordSearchGen/src/app/PuzzleCreatorGUI.java
+/home/zbb/dev/java/WordSearchGen/src/app/WordSearchGUI.java
+/home/zbb/dev/java/WordSearchGen/src/app/TimerLabel.java
 /home/zbb/dev/java/WordSearchGen/src/app/WordSearch.java
 /home/zbb/dev/java/WordSearchGen/src/test/NullCheckTest.java
 /home/zbb/dev/java/WordSearchGen/src/test/WordIntersectionTests.java
